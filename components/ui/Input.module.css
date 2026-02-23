@@ -1,0 +1,71 @@
+/* ── Wrapper ── */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* ── Label ── */
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+/* ── Input Container ── */
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-md);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.inputContainer:focus-within {
+  border-color: rgba(0, 232, 156, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 232, 156, 0.08);
+}
+
+.inputContainer.hasError {
+  border-color: rgba(255, 92, 135, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 92, 135, 0.08);
+}
+
+/* ── Icon ── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+/* ── Input Field ── */
+.input {
+  flex: 1;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* ── Error Message ── */
+.error {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-pulse);
+  line-height: 1.3;
+}

@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════
+   WalletButton — Glass Morphism Wallet Connect
+   ═══════════════════════════════════════════ */
+
+.wrapper {
+  position: relative;
+}
+
+.walletBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-hover);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-out-expo);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.walletBtn:hover {
+  background: var(--color-electric-mid);
+  border-color: var(--color-electric-bold);
+  box-shadow: 0 0 30px rgba(0, 232, 156, 0.15);
+  transform: translateY(-1px);
+}
+
+.walletBtn.connected {
+  gap: 6px;
+}
+
+/* ── Connected Dot ── */
+
+.connectedDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-electric);
+  box-shadow: 0 0 8px rgba(0, 232, 156, 0.6);
+  flex-shrink: 0;
+}
+
+.chevron {
+  opacity: 0.5;
+  transition: transform 0.2s var(--ease-out-expo);
+}
+
+/* ── Dropdown ── */
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: var(--color-panel-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs);
+  z-index: 100;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  animation: dropdownIn 0.2s var(--ease-out-expo);
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdownInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+}
+
+.dropdownLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dropdownWallet {
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: var(--color-surface-hover);
+  margin: var(--space-xs) 0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out-expo);
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+}
+
+.dropdownItem:hover {
+  color: var(--color-ember);
+  background: var(--color-ember-subtle);
+}

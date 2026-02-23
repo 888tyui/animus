@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════════
+   Dashboard Loading — Skeleton Shimmer
+   ═══════════════════════════════════════════ */
+
+.loadingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+}
+
+/* ── Skeleton Card ── */
+
+.skeletonCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.skeletonHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.skeletonIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.skeletonHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.skeletonTitle {
+  height: 14px;
+  width: 60%;
+  border-radius: 4px;
+}
+
+.skeletonSubtitle {
+  height: 10px;
+  width: 40%;
+  border-radius: 4px;
+}
+
+.skeletonBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeletonLine {
+  height: 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.skeletonLineShort {
+  height: 10px;
+  width: 70%;
+  border-radius: 4px;
+}
+
+.skeletonFooter {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.skeletonBadge {
+  height: 22px;
+  width: 48px;
+  border-radius: var(--radius-pill);
+}
+
+.skeletonBadgeLong {
+  height: 22px;
+  width: 72px;
+  border-radius: var(--radius-pill);
+}
+
+/* ── Shimmer Animation ── */
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.06) 40%,
+    rgba(255, 255, 255, 0.03) 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMove 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmerMove {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

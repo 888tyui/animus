@@ -1,0 +1,271 @@
+/* ═══════════════════════════════════════════
+   WorkspaceSection — Expandable Sidebar Group
+   ═══════════════════════════════════════════ */
+
+.section {
+  margin-bottom: 2px;
+}
+
+/* ── Header Row ── */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 8px 2px 4px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: background 0.15s var(--ease-out-expo);
+}
+
+.header:hover {
+  background: var(--color-surface);
+}
+
+.header.active {
+  background: var(--color-electric-muted);
+}
+
+.header.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 1px;
+  background: var(--color-electric);
+}
+
+.expandBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition: color 0.15s;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.expandBtn:hover {
+  color: var(--color-text-secondary);
+}
+
+.nameBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  padding: 4px 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+.colorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+
+.header:hover .name,
+.header.active .name {
+  color: var(--color-text-primary);
+}
+
+/* ── Context Menu ── */
+
+.menuWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  color: var(--color-text-tertiary);
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.header:hover .menuBtn {
+  opacity: 1;
+}
+
+.menuBtn:hover {
+  color: var(--color-text-secondary);
+  background: var(--color-surface-hover);
+}
+
+.contextMenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 140px;
+  background: var(--color-panel-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  z-index: 50;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  animation: menuIn 0.15s var(--ease-out-expo);
+}
+
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.contextItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+}
+
+.contextItem:hover {
+  color: var(--color-text-primary);
+  background: var(--color-surface-hover);
+}
+
+.contextItem.danger:hover {
+  color: var(--color-ember);
+  background: var(--color-ember-subtle);
+}
+
+/* ── Collapsed State ── */
+
+.collapsedDot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s;
+  position: relative;
+  background: none;
+  border: none;
+  font-family: inherit;
+  margin: 0 auto;
+}
+
+.collapsedDot:hover {
+  background: var(--color-glass);
+}
+
+.collapsedDot.active {
+  background: var(--color-electric-muted);
+}
+
+.collapsedDot.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 1px;
+  background: var(--color-electric);
+}
+
+/* ── Graph Items ── */
+
+.graphsList {
+  padding-left: 28px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+}
+
+.graphItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.graphItem:hover {
+  background: var(--color-glass);
+}
+
+.graphName {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+
+.graphItem:hover .graphName {
+  color: var(--color-text-primary);
+}
+
+.fileCount {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  background: var(--color-glass);
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+
+.emptyText {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  padding: 4px 10px;
+  font-style: italic;
+}

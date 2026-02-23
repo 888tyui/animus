@@ -1,0 +1,191 @@
+/* ═══════════════════════════════════════════
+   MoveToWorkspaceModal — Workspace Picker
+   ═══════════════════════════════════════════ */
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.titleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-violet-light);
+  color: var(--color-violet);
+  flex-shrink: 0;
+}
+
+.titleText {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.graphLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.graphName {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ── Workspace List ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-lg);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: var(--color-glass-hover);
+  border-radius: 2px;
+}
+
+/* ── Row Item ── */
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 150ms var(--ease-out-expo);
+  background: none;
+  border: none;
+  width: 100%;
+  font-family: var(--font-body);
+  text-align: left;
+}
+
+.row:hover {
+  background: var(--color-surface-hover);
+}
+
+.rowSelected {
+  composes: row;
+  background: var(--color-electric-muted);
+}
+
+.rowSelected:hover {
+  background: rgba(0, 232, 156, 0.09);
+}
+
+/* ── Radio Indicator ── */
+.radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 150ms ease;
+}
+
+.radioSelected {
+  composes: radio;
+  border-color: var(--color-electric);
+  background: var(--color-electric-soft);
+}
+
+.radioCheck {
+  color: var(--color-electric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Color Dot ── */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.noDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px dashed var(--color-text-tertiary);
+}
+
+/* ── Row Name ── */
+.rowName {
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowNameSecondary {
+  composes: rowName;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* ── New Workspace Button ── */
+.newWorkspaceBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 12px;
+  width: 100%;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  transition: all 150ms var(--ease-out-expo);
+  margin-bottom: var(--space-lg);
+}
+
+.newWorkspaceBtn:hover {
+  color: var(--color-electric);
+  border-color: var(--color-electric-bold);
+  background: var(--color-electric-subtle);
+}
+
+.newWorkspaceIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+}

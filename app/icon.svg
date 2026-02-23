@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#00E8FF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#6B4FE8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#06050E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#88F0FF"/>
+      <stop offset="40%" stop-color="#5BC8E8"/>
+      <stop offset="100%" stop-color="#6B5CE8"/>
+    </radialGradient>
+    <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0A0820"/>
+      <stop offset="80%" stop-color="#0A0820"/>
+      <stop offset="100%" stop-color="#2A2060"/>
+    </radialGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="108" fill="#06050E"/>
+  <!-- Glow aura -->
+  <circle cx="256" cy="240" r="200" fill="url(#glow)"/>
+  <!-- Dendrite branches -->
+  <g stroke="#7B5CE8" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.85">
+    <!-- Top branches -->
+    <path d="M256 180 L230 120 L210 80"/>
+    <path d="M230 120 L200 100"/>
+    <path d="M256 180 L290 110 L320 70"/>
+    <path d="M290 110 L330 100"/>
+    <path d="M256 180 L256 100 L240 60"/>
+    <path d="M256 100 L275 65"/>
+    <!-- Left branches -->
+    <path d="M210 230 L140 210 L90 190"/>
+    <path d="M140 210 L120 240"/>
+    <path d="M210 250 L150 270 L100 290"/>
+    <!-- Right branches -->
+    <path d="M302 230 L370 210 L420 190"/>
+    <path d="M370 210 L390 240"/>
+    <path d="M302 250 L360 270 L410 290"/>
+  </g>
+  <!-- Cyan highlight on branches -->
+  <g stroke="#00E8E0" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M256 180 L230 120"/>
+    <path d="M256 180 L290 110"/>
+    <path d="M210 230 L140 210"/>
+    <path d="M302 230 L370 210"/>
+  </g>
+  <!-- Neuron body -->
+  <ellipse cx="256" cy="240" rx="62" ry="58" fill="url(#core)" opacity="0.95"/>
+  <ellipse cx="256" cy="240" rx="62" ry="58" fill="none" stroke="#88E0FF" stroke-width="2" opacity="0.4"/>
+  <!-- Eyes -->
+  <rect x="230" y="228" width="20" height="18" rx="4" fill="url(#eyeGlow)"/>
+  <rect x="262" y="228" width="20" height="18" rx="4" fill="url(#eyeGlow)"/>
+  <!-- Eye shine -->
+  <circle cx="244" cy="234" r="2.5" fill="#88F0FF" opacity="0.7"/>
+  <circle cx="276" cy="234" r="2.5" fill="#88F0FF" opacity="0.7"/>
+  <!-- Axon (tail) -->
+  <path d="M256 298 C256 330, 270 360, 265 400 C262 420, 275 435, 280 445" stroke="#00E8E0" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <path d="M256 298 C256 330, 270 360, 265 400 C262 420, 275 435, 280 445" stroke="#7B5CE8" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- Axon terminal -->
+  <ellipse cx="282" cy="448" rx="14" ry="12" fill="#5BC8E8" opacity="0.85"/>
+  <ellipse cx="282" cy="448" rx="8" ry="7" fill="#88F0FF" opacity="0.6"/>
+</svg>

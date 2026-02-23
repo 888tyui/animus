@@ -1,0 +1,225 @@
+/* ═══════════════════════════════════════════
+   EmptyState — No Graphs Placeholder
+   ═══════════════════════════════════════════ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-4xl) var(--space-xl);
+  animation: fadeIn 600ms var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+/* ── Neural Network Illustration ── */
+.illustration {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: var(--space-2xl);
+}
+
+/* Connection lines between nodes */
+.line {
+  position: absolute;
+  height: 1px;
+  transform-origin: left center;
+  opacity: 0.3;
+}
+
+.line1 {
+  top: 60px;
+  left: 50px;
+  width: 100px;
+  background: linear-gradient(90deg, var(--color-electric), var(--color-violet));
+  transform: rotate(15deg);
+  animation: linePulse 3s ease-in-out infinite;
+}
+
+.line2 {
+  top: 100px;
+  left: 30px;
+  width: 140px;
+  background: linear-gradient(90deg, var(--color-violet), var(--color-pulse));
+  transform: rotate(-8deg);
+  animation: linePulse 3s ease-in-out 0.5s infinite;
+}
+
+.line3 {
+  top: 80px;
+  left: 60px;
+  width: 80px;
+  background: linear-gradient(90deg, var(--color-electric), var(--color-pulse));
+  transform: rotate(30deg);
+  animation: linePulse 3s ease-in-out 1s infinite;
+}
+
+.line4 {
+  top: 130px;
+  left: 45px;
+  width: 110px;
+  background: linear-gradient(90deg, var(--color-pulse), var(--color-electric));
+  transform: rotate(-20deg);
+  animation: linePulse 3s ease-in-out 1.5s infinite;
+}
+
+.line5 {
+  top: 70px;
+  left: 70px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--color-violet), var(--color-electric));
+  transform: rotate(50deg);
+  animation: linePulse 3s ease-in-out 2s infinite;
+}
+
+/* Neural nodes */
+.node {
+  position: absolute;
+  border-radius: 50%;
+  animation: nodePulse 4s ease-in-out infinite;
+}
+
+.node1 {
+  width: 12px;
+  height: 12px;
+  top: 50px;
+  left: 40px;
+  background: var(--color-electric);
+  box-shadow: 0 0 20px rgba(0, 232, 156, 0.4);
+  animation-delay: 0s;
+}
+
+.node2 {
+  width: 16px;
+  height: 16px;
+  top: 90px;
+  left: 90px;
+  background: var(--color-violet);
+  box-shadow: 0 0 20px rgba(145, 113, 248, 0.4);
+  animation-delay: 0.6s;
+}
+
+.node3 {
+  width: 10px;
+  height: 10px;
+  top: 55px;
+  left: 145px;
+  background: var(--color-pulse);
+  box-shadow: 0 0 20px rgba(255, 92, 135, 0.4);
+  animation-delay: 1.2s;
+}
+
+.node4 {
+  width: 14px;
+  height: 14px;
+  top: 125px;
+  left: 35px;
+  background: var(--color-electric);
+  box-shadow: 0 0 20px rgba(0, 232, 156, 0.3);
+  animation-delay: 1.8s;
+}
+
+.node5 {
+  width: 8px;
+  height: 8px;
+  top: 135px;
+  left: 150px;
+  background: var(--color-violet);
+  box-shadow: 0 0 20px rgba(145, 113, 248, 0.3);
+  animation-delay: 2.4s;
+}
+
+.node6 {
+  width: 18px;
+  height: 18px;
+  top: 95px;
+  left: 155px;
+  background: var(--color-electric);
+  box-shadow: 0 0 24px rgba(0, 232, 156, 0.35);
+  animation-delay: 0.3s;
+}
+
+.node7 {
+  width: 6px;
+  height: 6px;
+  top: 70px;
+  left: 70px;
+  background: var(--color-pulse);
+  box-shadow: 0 0 12px rgba(255, 92, 135, 0.3);
+  animation-delay: 1.5s;
+}
+
+/* ── Text ── */
+.title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  max-width: 420px;
+  line-height: 1.6;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.demoLink {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition: color 200ms ease;
+  background: none;
+  border: none;
+}
+
+.demoLink:hover {
+  color: var(--color-electric);
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+@keyframes linePulse {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,41 @@
+/* ═══════════════════════════════════════════
+   Graph Loading — Spinner
+   ═══════════════════════════════════════════ */
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-void);
+  gap: 16px;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 232, 156, 0.2);
+  border-top-color: var(--color-electric);
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.01em;
+}

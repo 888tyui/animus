@@ -1,0 +1,177 @@
+/* ═══════════════════════════════════════════
+   NewGraphModal — Import Repository Modal
+   ═══════════════════════════════════════════ */
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.titleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-electric-soft);
+  color: var(--color-electric);
+  flex-shrink: 0;
+}
+
+.titleText {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── Validation Indicator ── */
+.inputRow {
+  position: relative;
+}
+
+.validationIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.validIcon {
+  color: var(--color-electric);
+}
+
+.invalidIcon {
+  color: var(--color-pulse);
+}
+
+/* ── Inferred Info ── */
+.inferredInfo {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(0, 232, 156, 0.05);
+  border: 1px solid var(--color-electric-mid);
+  border-radius: var(--radius-md);
+  animation: slideDown 200ms var(--ease-out-expo) forwards;
+}
+
+.inferredItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.inferredLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inferredValue {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-electric);
+  font-weight: 500;
+}
+
+/* ── Workspace Selector ── */
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.selectLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='rgba(242,240,238,0.3)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-electric-intense);
+  box-shadow: 0 0 0 3px rgba(0, 232, 156, 0.08);
+}
+
+.select option {
+  background: var(--color-void-elevated);
+  color: var(--color-text-primary);
+}
+
+/* ── Error Display ── */
+.errorBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--color-pulse-subtle);
+  border: 1px solid var(--color-pulse-medium);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-pulse);
+  line-height: 1.4;
+}
+
+.errorIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

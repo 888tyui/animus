@@ -1,0 +1,53 @@
+/* ═══════════════════════════════════════════
+   Graph Stats — Floating Badge
+   ═══════════════════════════════════════════ */
+
+.stats {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-surface-hover);
+  z-index: 5;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: var(--color-glass-hover);
+}
+
+.healthRing {
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .stats {
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .statItem {
+    font-size: 0.625rem;
+  }
+}

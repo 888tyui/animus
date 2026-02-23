@@ -1,0 +1,34 @@
+/* ── Base Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ── Sizes ── */
+.sm {
+  padding: 3px 10px;
+  font-size: var(--text-sm);
+}
+
+.md {
+  padding: 5px 14px;
+  font-size: var(--text-base);
+}
+
+/* ── Filled Variant ── */
+.filled {
+  background-color: currentColor;
+  border: none;
+}
+
+/* ── Outline Variant ── */
+.outline {
+  background: transparent;
+  border: 1px solid currentColor;
+}

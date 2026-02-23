@@ -1,0 +1,81 @@
+/* ═══════════════════════════════════════════
+   DeleteConfirmModal — Generic Delete Confirm
+   ═══════════════════════════════════════════ */
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.titleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-pulse-light);
+  color: var(--color-pulse);
+  flex-shrink: 0;
+}
+
+.titleText {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+/* ── Message ── */
+.message {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+}
+
+.itemName {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+}
+
+.deleteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-base);
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  background: var(--color-pulse-soft);
+  color: var(--color-pulse);
+  border: 1px solid var(--color-pulse-medium);
+  cursor: pointer;
+  transition: all 200ms var(--ease-out-expo);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.deleteButton:hover {
+  background: var(--color-pulse-strong);
+  border-color: var(--color-pulse-bold);
+  box-shadow: 0 0 20px rgba(255, 92, 135, 0.1);
+}
+
+.deleteButton:active {
+  background: var(--color-pulse-vivid);
+  transform: translateY(0);
+}

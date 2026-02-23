@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String      @id @default(uuid())
+  walletAddress      String      @unique
+  walletName         String?
+  onboardingComplete Boolean     @default(false)
+  settings           Json?
+  createdAt          DateTime    @default(now())
+  lastLoginAt        DateTime    @default(now())
+  workspaces         Workspace[]
+  graphs             Graph[]
+
+  @@map("users")
+}
+
+model Workspace {
+  id        String   @id @default(uuid())
+  userId    String
+  name      String
+  color     String   @default("#00E89C")
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  graphs    Graph[]
+
+  @@index([userId])
+  @@map("workspaces")
+}
+
+model Graph {
+  id           String     @id @default(uuid())
+  userId       String
+  workspaceId  String?
+  name         String
+  repoOwner    String
+  repoName     String
+  repoUrl      String
+  nodes        Json
+  edges        Json
+  fileCount    Int        @default(0)
+  edgeCount    Int        @default(0)
+  healthScore  Int        @default(100)
+  createdAt    DateTime   @default(now())
+  lastViewedAt DateTime   @default(now())
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace    Workspace? @relation(fields: [workspaceId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([workspaceId])
+  @@map("graphs")
+}

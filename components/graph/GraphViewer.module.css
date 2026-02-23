@@ -1,0 +1,99 @@
+/* ═══════════════════════════════════════════
+   Graph Viewer — Main Layout
+   ═══════════════════════════════════════════ */
+
+.viewer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-void);
+  overflow: hidden;
+}
+
+.canvasArea {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.sceneLoading {
+  width: 100%;
+  height: 100%;
+  background: var(--color-void);
+}
+
+/* ── Error State ── */
+
+.errorState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-void);
+}
+
+.errorContent {
+  text-align: center;
+  max-width: 400px;
+  padding: 0 var(--space-xl);
+}
+
+.errorTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.errorDescription {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.errorBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  background: var(--color-electric-medium);
+  border: 1px solid var(--color-electric-vivid);
+  color: var(--color-electric);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.errorBtn:hover {
+  background: var(--color-electric-strong);
+  border-color: var(--color-electric-intense);
+}
+
+.errorBtn + .errorBtn {
+  margin-left: 8px;
+}
+
+/* ── Loading Spinner ── */
+
+.loadingSpinner {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 16px;
+  border: 3px solid var(--color-surface-2);
+  border-top-color: var(--color-electric);
+  border-radius: 50%;
+  animation: spinViewer 0.7s linear infinite;
+}
+
+@keyframes spinViewer {
+  to { transform: rotate(360deg); }
+}

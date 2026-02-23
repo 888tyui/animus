@@ -1,0 +1,111 @@
+/* ═══════════════════════════════════════════
+   Graph Toolbar
+   ═══════════════════════════════════════════ */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-surface-hover);
+  flex-shrink: 0;
+}
+
+/* ── Left Section ── */
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--color-glass);
+  border: 1px solid var(--color-surface-hover);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.backBtn:hover {
+  background: var(--color-glass-hover);
+  color: var(--color-text-primary);
+}
+
+.graphName {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* ── Right Section ── */
+
+.toolbarRight {
+  display: flex;
+  gap: 6px;
+}
+
+.toolbarBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--color-glass);
+  border: 1px solid var(--color-surface-hover);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.toolbarBtn:hover {
+  background: var(--color-glass-hover);
+  color: var(--color-text-primary);
+}
+
+.toolbarBtnActive {
+  background: var(--color-electric-mid);
+  border-color: var(--color-electric-bold);
+  color: var(--color-electric);
+}
+
+.toolbarBtnActive:hover {
+  background: var(--color-electric-vivid);
+  color: var(--color-electric);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .toolbar {
+    padding: 8px 12px;
+  }
+
+  .graphName {
+    font-size: 0.75rem;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .toolbarBtn span,
+  .backBtn span {
+    display: none;
+  }
+}

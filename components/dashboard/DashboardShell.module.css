@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════
+   DashboardShell — Layout Frame
+   ═══════════════════════════════════════════ */
+
+.shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-void);
+  transition: grid-template-columns 300ms var(--ease-out-expo);
+}
+
+.shell.collapsed {
+  grid-template-columns: 64px 1fr;
+}
+
+/* ── Main Area ── */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--space-xl);
+}
+
+/* ── Mobile Overlay (dark backdrop) ── */
+
+.mobileOverlay {
+  display: none;
+}
+
+/* ── Mobile Breakpoint ── */
+
+@media (max-width: 768px) {
+  .shell,
+  .shell.collapsed {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: var(--space-md);
+  }
+
+  .mobileOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: var(--color-overlay-light);
+    z-index: 90;
+  }
+}

@@ -1,0 +1,122 @@
+/* ═══════════════════════════════════════════
+   NewWorkspaceModal — Create Workspace Modal
+   ═══════════════════════════════════════════ */
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.titleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-violet-light);
+  color: var(--color-violet);
+  flex-shrink: 0;
+}
+
+.titleText {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── Color Picker ── */
+.colorSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.colorLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+.colorGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.colorCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition:
+    transform 200ms var(--ease-out-expo),
+    box-shadow 200ms var(--ease-out-expo);
+}
+
+.colorCircle:hover {
+  transform: scale(1.15);
+}
+
+.colorCircleSelected {
+  composes: colorCircle;
+  box-shadow: 0 0 0 3px var(--color-void-elevated), 0 0 0 5px currentColor;
+  transform: scale(1.1);
+}
+
+.colorCircleSelected:hover {
+  transform: scale(1.15);
+}
+
+/* ── Preview ── */
+.preview {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-glass-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.previewDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.previewName {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+}
+
+.previewPlaceholder {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}

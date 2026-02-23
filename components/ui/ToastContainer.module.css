@@ -1,0 +1,208 @@
+/* ── Toast Container ── */
+.container {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 9998; /* Below grain overlay (9999), above modals (100) */
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-sm);
+  pointer-events: none;
+  max-width: 420px;
+  width: 100%;
+}
+
+/* ── Individual Toast ── */
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-panel-elevated);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    var(--shadow-elevation-2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  animation: toastSlideIn 400ms var(--ease-out-expo) forwards;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.toast::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.toast:hover::before {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ── Accent bar (left edge glow) ── */
+.toast::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px 0 0 3px;
+  background: var(--toast-accent);
+  box-shadow: 0 0 12px var(--toast-glow);
+}
+
+/* ── Exiting ── */
+.exiting {
+  animation: toastSlideOut 300ms var(--ease-out-expo) forwards;
+}
+
+/* ── Icon ── */
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--toast-accent);
+  filter: drop-shadow(0 0 6px var(--toast-glow));
+}
+
+/* ── Body ── */
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.message {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* ── Dismiss Button ── */
+.dismiss {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 0px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-tertiary);
+  transition: color 150ms ease, background 150ms ease;
+}
+
+.dismiss:hover {
+  color: var(--color-text-secondary);
+  background: var(--color-surface-hover);
+}
+
+/* ── Progress bar (auto-dismiss timer) ── */
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 3px;
+  right: 0;
+  height: 2px;
+  background: var(--toast-accent);
+  opacity: 0.4;
+  transform-origin: left;
+  animation: toastProgress var(--toast-duration) linear forwards;
+}
+
+/* ── Type Variants ── */
+.success {
+  --toast-accent: var(--color-electric);
+  --toast-glow: rgba(0, 232, 156, 0.3);
+}
+
+.error {
+  --toast-accent: var(--color-pulse);
+  --toast-glow: rgba(255, 92, 135, 0.3);
+  border-color: var(--color-pulse-subtle);
+}
+
+.warning {
+  --toast-accent: var(--color-cyan);
+  --toast-glow: rgba(255, 180, 68, 0.3);
+}
+
+.info {
+  --toast-accent: var(--color-violet);
+  --toast-glow: rgba(145, 113, 248, 0.3);
+}
+
+/* ── Keyframes ── */
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(40px) scale(0.96);
+  }
+}
+
+@keyframes toastProgress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .container {
+    left: var(--space-md);
+    right: var(--space-md);
+    bottom: var(--space-md);
+    max-width: none;
+  }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+    opacity: 1;
+  }
+
+  .exiting {
+    animation: none;
+    opacity: 0;
+  }
+
+  .progress {
+    animation: none;
+    display: none;
+  }
+}

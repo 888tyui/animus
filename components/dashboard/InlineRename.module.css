@@ -1,0 +1,37 @@
+/* ═══════════════════════════════════════════
+   InlineRename — Inline Text Editing Input
+   ═══════════════════════════════════════════ */
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-electric);
+  border-radius: 0;
+  padding: 0 0 2px 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--color-text-primary);
+  line-height: inherit;
+  outline: none;
+  caret-color: var(--color-electric);
+  transition: border-color 200ms var(--ease-out-expo);
+}
+
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.input:focus {
+  border-bottom-color: var(--color-electric);
+  box-shadow: 0 1px 0 0 rgba(0, 232, 156, 0.3);
+}

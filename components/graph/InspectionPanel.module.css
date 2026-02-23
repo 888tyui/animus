@@ -1,0 +1,201 @@
+/* ═══════════════════════════════════════════
+   Inspection Panel — Node Details
+   ═══════════════════════════════════════════ */
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.panel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 280px;
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--color-panel-heavy);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  animation: panelSlideIn 0.4s var(--ease-out-expo) forwards;
+  z-index: 10;
+}
+
+/* ── Header ── */
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.panelFileInfo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.panelFileName {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.panelClose {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  background: transparent;
+  border: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.panelClose:hover {
+  background: var(--color-glass-hover);
+  color: var(--color-text-primary);
+}
+
+.panelClose:focus-visible {
+  outline: 2px solid var(--color-electric);
+  outline-offset: 2px;
+}
+
+/* ── Path ── */
+
+.panelPath {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Badge ── */
+
+.panelBadge {
+  margin-bottom: 16px;
+}
+
+.extBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Stats Grid ── */
+
+.panelStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.statValue {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ── Complexity ── */
+
+.complexitySection {
+  padding-top: 14px;
+  border-top: 1px solid var(--color-surface-hover);
+}
+
+.complexityHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.complexityLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+.complexityBadge {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.complexityBar {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-surface-hover);
+  overflow: hidden;
+}
+
+.complexityFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s var(--ease-out-expo);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .panel {
+    top: auto;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+  }
+}

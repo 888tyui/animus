@@ -1,0 +1,63 @@
+/* ═══════════════════════════════════════════
+   Graph Controls — Zoom & View
+   ═══════════════════════════════════════════ */
+
+.controls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
+  border-radius: var(--radius-md);
+  background: var(--color-panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-surface-hover);
+  z-index: 5;
+}
+
+.controlBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out-expo);
+}
+
+.controlBtn:hover {
+  background: var(--color-glass-hover);
+  color: var(--color-text-primary);
+}
+
+.controlBtn:active {
+  background: var(--color-glass-active);
+}
+
+.controlBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.divider {
+  width: 20px;
+  height: 1px;
+  background: var(--color-surface-hover);
+  margin: 2px auto;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .controls {
+    bottom: 12px;
+    right: 12px;
+  }
+}
