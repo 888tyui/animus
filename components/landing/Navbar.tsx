@@ -64,7 +64,7 @@ export default function Navbar() {
           >
             <Twitter size={16} />
           </a>
-          <a href="/dashboard" className={styles.iconBtn} aria-label="$ANIMUS">
+          <a href="https://pump.fun/coin/4A7oqEFejoQfDdKgteJZMHX6Z5sjezh2APMULez7pump" target="_blank" rel="noopener noreferrer" className={styles.iconBtn} aria-label="$ANIMUS">
             <Coins size={16} />
           </a>
           <div className={styles.actionDivider} />
@@ -124,7 +124,7 @@ export default function Navbar() {
             >
               <Twitter size={17} />
             </a>
-            <a href="/dashboard" className={styles.iconBtn}>
+            <a href="https://pump.fun/coin/4A7oqEFejoQfDdKgteJZMHX6Z5sjezh2APMULez7pump" target="_blank" rel="noopener noreferrer" className={styles.iconBtn}>
               <Coins size={17} />
             </a>
           </div>

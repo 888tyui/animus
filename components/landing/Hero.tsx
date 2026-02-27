@@ -45,7 +45,7 @@ export default function Hero() {
         </p>
 
         <div className={styles.buttons} style={{ animationDelay: '0.9s' }}>
-          <a href="/dashboard" className={styles.btnPrimary}>
+          <a href="https://pump.fun/coin/4A7oqEFejoQfDdKgteJZMHX6Z5sjezh2APMULez7pump" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
             <Coins size={18} />
             <span>$ANIMUS</span>
             <ArrowRight size={16} className={styles.btnArrow} />
