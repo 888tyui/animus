@@ -56,7 +56,7 @@ export default function Navbar() {
         {/* Right Actions */}
         <div className={styles.actions}>
           <a
-            href="https://x.com/animus_viz"
+            href="https://x.com/animus_systems"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconBtn}
@@ -123,7 +123,7 @@ export default function Navbar() {
           </a>
           <div className={styles.mobileSocials}>
             <a
-              href="https://x.com/animus_viz"
+              href="https://x.com/animus_systems"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.iconBtn}

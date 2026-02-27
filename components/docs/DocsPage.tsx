@@ -285,7 +285,7 @@ export default function DocsPage() {
             <a href="https://github.com/animus-viz" target="_blank" rel="noopener noreferrer" className={styles.topBarIconBtn} aria-label="GitHub">
               <Github size={16} />
             </a>
-            <a href="https://x.com/animus_viz" target="_blank" rel="noopener noreferrer" className={styles.topBarIconBtn} aria-label="Twitter">
+            <a href="https://x.com/animus_systems" target="_blank" rel="noopener noreferrer" className={styles.topBarIconBtn} aria-label="Twitter">
               <Twitter size={16} />
             </a>
           </div>

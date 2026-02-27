@@ -63,7 +63,7 @@ export default function Footer() {
             </a>
             <div className={styles.divider} />
             <a
-              href="https://x.com/animus_viz"
+              href="https://x.com/animus_systems"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialBtn}
