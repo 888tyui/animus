@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { Github, ArrowRight, ChevronDown } from 'lucide-react'
+import { Coins, ArrowRight, ChevronDown } from 'lucide-react'
 import styles from './Hero.module.css'
 
 const NeuralScene = dynamic(
@@ -46,8 +46,8 @@ export default function Hero() {
 
         <div className={styles.buttons} style={{ animationDelay: '0.9s' }}>
           <a href="/dashboard" className={styles.btnPrimary}>
-            <Github size={18} />
-            <span>Connect GitHub</span>
+            <Coins size={18} />
+            <span>$ANIMUS</span>
             <ArrowRight size={16} className={styles.btnArrow} />
           </a>
           <a href="#demo" className={styles.btnSecondary}>

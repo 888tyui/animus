@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { Github, Twitter, Zap, Menu, X } from 'lucide-react'
+import { Coins, Twitter, Zap, Menu, X } from 'lucide-react'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -64,14 +64,8 @@ export default function Navbar() {
           >
             <Twitter size={16} />
           </a>
-          <a
-            href="https://github.com/animus-viz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconBtn}
-            aria-label="GitHub"
-          >
-            <Github size={16} />
+          <a href="/dashboard" className={styles.iconBtn} aria-label="$ANIMUS">
+            <Coins size={16} />
           </a>
           <div className={styles.actionDivider} />
           <a href="/dashboard" className={styles.launchBtn}>
@@ -130,13 +124,8 @@ export default function Navbar() {
             >
               <Twitter size={17} />
             </a>
-            <a
-              href="https://github.com/animus-viz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.iconBtn}
-            >
-              <Github size={17} />
+            <a href="/dashboard" className={styles.iconBtn}>
+              <Coins size={17} />
             </a>
           </div>
           <a href="/dashboard" className={styles.launchBtn}>
