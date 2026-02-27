@@ -1,0 +1,434 @@
+/* ═══════════════════════════════════════════
+   Banner Page — Twitter/X Header Export
+   ═══════════════════════════════════════════ */
+
+.page {
+  min-height: 100vh;
+  background: #020108;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 20px;
+}
+
+.hint {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.hint kbd {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin: 0 2px;
+}
+
+/* ── Banner Frame ── */
+
+.frame {
+  width: 1500px;
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 40px 120px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════
+   Banner Canvas — 1500 × 500
+   ═══════════════════════════════════════════ */
+
+.banner {
+  position: relative;
+  width: 1500px;
+  height: 500px;
+  background: #06050E;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Ambient Gradient Orbs ── */
+
+.orbA {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 232, 156, 0.12) 0%,
+    rgba(0, 232, 156, 0.04) 35%,
+    transparent 70%
+  );
+  top: -420px;
+  left: -180px;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.orbB {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(145, 113, 248, 0.1) 0%,
+    rgba(145, 113, 248, 0.03) 40%,
+    transparent 70%
+  );
+  bottom: -350px;
+  right: -100px;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.orbC {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 92, 135, 0.06) 0%,
+    transparent 60%
+  );
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* ── Grid Pattern ── */
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    black 0%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    black 0%,
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+/* ── Neural Network Constellation ── */
+
+.constellation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.node {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.nodeGlow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.3;
+}
+
+/* ── Floating Edges (decorative lines) ── */
+
+.edgeSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.edgeSvg line {
+  stroke-linecap: round;
+}
+
+/* ── Content ── */
+
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 0 120px;
+  width: 100%;
+}
+
+/* ── Left: Branding ── */
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.mascot {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  filter:
+    drop-shadow(0 0 24px rgba(0, 232, 156, 0.2))
+    drop-shadow(0 0 60px rgba(0, 232, 156, 0.08));
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1;
+  text-shadow:
+    0 0 60px rgba(0, 232, 156, 0.06),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 420px;
+  letter-spacing: 0.005em;
+}
+
+.taglineAccent {
+  font-style: italic;
+  font-family: var(--font-display);
+  background: var(--gradient-brand-full);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter:
+    drop-shadow(0 0 20px rgba(0, 232, 156, 0.2))
+    drop-shadow(0 0 40px rgba(255, 180, 68, 0.08));
+}
+
+/* ── Pill Tags ── */
+
+.pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(242, 240, 238, 0.6);
+  letter-spacing: 0.02em;
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Right: Visual Element ── */
+
+.visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+/* ── Code Window ── */
+
+.codeWindow {
+  position: relative;
+  width: 460px;
+  background: rgba(12, 11, 24, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(0, 232, 156, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.codeWindowBar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.codeWindowDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.codeWindowTitle {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(242, 240, 238, 0.3);
+  margin-left: 8px;
+  letter-spacing: 0.03em;
+}
+
+.codeBody {
+  padding: 18px 22px 22px;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(242, 240, 238, 0.5);
+}
+
+.codeLine {
+  display: flex;
+  gap: 0;
+  white-space: pre;
+}
+
+.codeLineNum {
+  width: 28px;
+  flex-shrink: 0;
+  color: rgba(242, 240, 238, 0.15);
+  user-select: none;
+  text-align: right;
+  margin-right: 16px;
+}
+
+.codeKeyword {
+  color: #9171F8;
+}
+
+.codeFunc {
+  color: #00E89C;
+}
+
+.codeString {
+  color: #FFB444;
+}
+
+.codeComment {
+  color: rgba(242, 240, 238, 0.22);
+  font-style: italic;
+}
+
+.codeProp {
+  color: #FF5C87;
+}
+
+.codeType {
+  color: #61DAFB;
+}
+
+.codePlain {
+  color: rgba(242, 240, 238, 0.55);
+}
+
+.codeBracket {
+  color: rgba(242, 240, 238, 0.3);
+}
+
+/* ── Decorative Floating Badge ── */
+
+.floatingBadge {
+  position: absolute;
+  bottom: 36px;
+  right: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 232, 156, 0.06);
+  border: 1px solid rgba(0, 232, 156, 0.15);
+  z-index: 10;
+}
+
+.floatingBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00E89C;
+  box-shadow: 0 0 8px #00E89C;
+}
+
+.floatingBadgeText {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 232, 156, 0.8);
+  letter-spacing: 0.02em;
+}
+
+/* ── Vignette ── */
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    transparent 30%,
+    rgba(6, 5, 14, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ── Noise Grain ── */
+
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+}
